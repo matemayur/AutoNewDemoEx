@@ -25,6 +25,8 @@ public class LandingPageObjFile {
 		this.driver = driver;
 		wait = new WebDriverWait(driver,15);
 		javaScriptExecutorUtil = new JavaScriptExecutor(driver);
+		
+		
 	}
 	
 	

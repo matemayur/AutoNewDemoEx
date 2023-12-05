@@ -16,9 +16,9 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
-public class StepDefs {
+public class StepDef {
 	
-private static final Logger logger = LogManager.getLogger(StepDefs.class);
+private static final Logger logger = LogManager.getLogger(StepDef.class);
 	
 	private WebDriver driver;
 	Scenario scn;
@@ -37,6 +37,10 @@ private static final Logger logger = LogManager.getLogger(StepDefs.class);
 		String browserName = WebDriverFacotry.getBrowserName();
 		driver = WebDriverFacotry.setUpBrowser(browserName);
 		scn.log("browser get invoked");
+		landingPageObjFile = new LandingPageObjFile(driver);
+		headerSecPageObjectFile = new HeaderSecPageObjectFile(driver);
+		signupLoginPOMFile = new SignupLoginPOMFile(driver);
+		
 	}
 	
 	
