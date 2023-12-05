@@ -23,6 +23,7 @@ Then user is click on contact us button
 And user able to see contact us page title as "Automation Exercise - Contact Us"
 
 
+
 @EmailSubscriptionValidation
 Scenario: User is able to open browser, Navigate to URL and verify the subscription field
 Given User Scroll down to footer of the page
@@ -48,7 +49,6 @@ Examples:
 |mayur@gmail.com         |gacacaj   |
 
 
-
 @ValidateEmailIDandPassForSignup/LoginPurpose
 Scenario: User open the home page url and verify emailId and password is valid 
 Given user click to signup/login button
@@ -63,3 +63,6 @@ Examples:
 | Email_Id                | Password      | Logged_In_As  |
 | ciwika1748@frandin.com  | 123456.Abc    | Ryan Wick     |
 | ciwika1744@frandin.com  | 123456.Abc    | James Richard |
+
+
+
