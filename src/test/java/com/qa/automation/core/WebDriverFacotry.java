@@ -96,13 +96,13 @@ public class WebDriverFacotry {
 	        }
 	    }
 	
-	public  static void quitDriver()
+	public static void quitDriver()
 	{
 		driver.quit();
 		logger.info("Browser got closed");
 	}
 	
-	public  static void setURL(String url)
+	public static void setURL(String url)
 	{
 		driver.get(url);
 		logger.info("navigate to the url");

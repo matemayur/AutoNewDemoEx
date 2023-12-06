@@ -49,7 +49,7 @@ Examples:
 |mayur@gmail.com         |gacacaj   |
 
 
-@ValidateEmailIDandPassForSignup/LoginPurpose
+@ValidateEmailIDPass
 Scenario: User open the home page url and verify emailId and password is valid 
 Given user click to signup/login button
 When user redirected to login page with title as "Automation Exercise - Signup / Login"
