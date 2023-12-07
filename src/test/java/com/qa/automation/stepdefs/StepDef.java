@@ -55,7 +55,7 @@ private static final Logger logger = LogManager.getLogger(StepDef.class);
 	}
 	
 	@After(order=2)
-	public void takescreenshot(Scenario s)
+	public void takescreenshot(Scenario scn)
 	{
 		WebDriverFacotry.failedScnScreenshot(scn);
 	}
@@ -63,26 +63,24 @@ private static final Logger logger = LogManager.getLogger(StepDef.class);
 	
 	@Given("user navigate to the home application url {string}")
 	public void user_navigate_to_the_home_application_url(String url) {
-	   
+	    
 		WebDriverFacotry.setURL(url);
 	}
-	
-	
+
+
 	@Given("user verify the home page is visible successfully")
 	public void user_verify_the_home_page_is_visible_successfully() {
-		
+	   
 		landingPageObjFile.homePageTitle();
 		logger.info("user verify the home page title");
 	}
-
-
-
+	
+	
 	@Given("user is able to click on Product button")
 	public void user_is_able_to_click_on_product_button() {
-		
+	   
 		landingPageObjFile.clickProductsBtn();
-		   logger.info("user click on product button");
-		
+		logger.info("user click on product button");
 	}
 	
 	
@@ -93,10 +91,9 @@ private static final Logger logger = LogManager.getLogger(StepDef.class);
 		 logger.info("user verify the product page title");
 	}
 	
-	
 	@Then("user is able to click on Cart button")
 	public void user_is_able_to_click_on_cart_button() {
-		
+	   
 		landingPageObjFile.clickCartBtn();
 	    logger.info("user click on cart button"); 
 	}
@@ -104,47 +101,38 @@ private static final Logger logger = LogManager.getLogger(StepDef.class);
 	
 	@Then("user able on cart page title as {string}")
 	public void user_able_on_cart_page_title_as(String CartPageTitle) {
-		
+	  
 		headerSecPageObjectFile.verifycartPageTitle(CartPageTitle);
 		logger.info("user verify the cart page title");
 	}
-	
 	
 	@Then("user is able to click on signup\\/login button")
 	public void user_is_able_to_click_on_signup_login_button() {
 	   
 		landingPageObjFile.clickSignUpOrLoginBtn();
 		 logger.info("user click on signup/login button");
-		
 	}
-	
 	
 	@Then("user over the signup\\/login page with title as {string}")
 	public void user_over_the_signup_login_page_with_title_as(String signUpPageTitle) {
-	    
+	   
 		signupLoginPOMFile.verifySignUpPageTitle(signUpPageTitle);
 	    logger.info("user verify the signup page title");
-		
 	}
-	
 	
 	@Then("user is able to Click on test cases button")
 	public void user_is_able_to_click_on_test_cases_button() {
-	    
+	   
 		landingPageObjFile.clickTestCasesBtn();
 	    logger.info("user click on test cases button");
-		
 	}
-	
 	
 	@Then("user is able over the test cases title as {string}")
 	public void user_is_able_over_the_test_cases_title_as(String TCasesPageTitle) {
 	   
 		headerSecPageObjectFile.verifyTestCasesPage(TCasesPageTitle);
 	    logger.info("user verify the test cases page title");
-		
 	}
-	
 	
 	@When("user click on API Testing button")
 	public void user_click_on_api_testing_button() {
@@ -153,7 +141,6 @@ private static final Logger logger = LogManager.getLogger(StepDef.class);
 		logger.info("user click on API testing button");
 	}
 	
-	
 	@Then("User verify the {string} text is visible")
 	public void user_verify_the_text_is_visible(String apiTestingList) {
 	    
@@ -161,23 +148,20 @@ private static final Logger logger = LogManager.getLogger(StepDef.class);
 	    logger.info("user verify" + apiTestingList + "text is available");
 	}
 	
-	
 	@Then("user is click on contact us button")
 	public void user_is_click_on_contact_us_button() {
-	    
+	   
 		landingPageObjFile.clickContactUsBtn();
 		logger.info("user click on contact us button");
 	}
 	
-	
 	@Then("user able to see contact us page title as {string}")
 	public void user_able_to_see_contact_us_page_title_as(String ContactUsPageTitle) {
-	   
+	    
 		headerSecPageObjectFile.verifycontactUsPageTitle(ContactUsPageTitle);
 		logger.info("user verify contact us page title");
 		
 	}
-	
 	
 	// Test cases for subscription fields
 	
