@@ -21,7 +21,7 @@ public class SignupLoginPOMFile {
 	
 	
 	
-	// private locators
+	       // private locators
 			private By LogToAcText = By.xpath("//h2[text()='Login to your account']");
 			private By EmailId = By.xpath("//input[@placeholder='Email Address']");
 			private By Password = By.xpath("//input[@placeholder='Password']");

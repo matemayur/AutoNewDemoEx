@@ -5,6 +5,22 @@ Background: Navigate to the base URL of application
 Given user navigate to the home application url "http://automationexercise.com"
 And user verify the home page is visible successfully
 
+
+@HeaderBtnValidation
+Scenario: User is able to open browser,Navigate to URL and validate different header option on home page of application
+Given user able to see application logo is displayed
+When user see the following option are available on header section   
+|HeaderListName       | HeaderBtnPageTitle                                         |
+| Home                | Automation Exercise                                        |
+| Products            | Automation Exercise - All Products                         |
+| Cart                | Automation Exercise - Checkout                             |
+| Signup / Login      | Automation Exercise - Signup / Login                       |
+| Test Cases          | Automation Practice Website for UI Testing - Test Cases    |
+| API Testing         | Automation Practice for API Testing                        | 
+| Contact us          | Automation Exercise - Contact Us                           |
+
+
+
 @HeaderSectionvalidate
 Scenario: User is able to open browser, Navigate to URL and validate the header section button of website
 Given user is able to click on Product button
@@ -28,7 +44,7 @@ And user able to see contact us page title as "Automation Exercise - Contact Us"
 Scenario: User is able to open browser, Navigate to URL and verify the subscription field
 Given User Scroll down to footer of the page
 When  After scrooling down user is able to see "SUBSCRIPTION" keyword 
-And  user enter email address as "matemayur786@gmail.com" in box
+And  user enter email address as "matemay78@gmail.com" in box
 And  user click on arrow button
 Then user Verify success message "You have been successfully subscribed!" is visible on Display
 
@@ -61,7 +77,7 @@ Then user verify with "<Logged_In_As>" just after Logged in as button
 And user click on logout button
 Examples:
 | Email_Id                | Password      | Logged_In_As  |
-| ciwika1748@frandin.com  | 123456.Abc    | Ryan Wick     |
+| ciwika1748@frandin.comm  | 123456.Abc    | Ryan Wick     |
 | ciwika1744@frandin.com  | 123456.Abc    | James Richard |
 
 

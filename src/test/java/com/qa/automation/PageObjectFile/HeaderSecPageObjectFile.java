@@ -27,6 +27,7 @@ public class HeaderSecPageObjectFile {
 			public void verifycartPageTitle(String CartPageTitle)
 			{
 				Assert.assertEquals(true, driver.getTitle().contains(CartPageTitle));
+			
 			}
 			
 			public void verifyTestCasesPage(String TCasesPageTitle)

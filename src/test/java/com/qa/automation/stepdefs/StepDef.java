@@ -1,16 +1,22 @@
 package com.qa.automation.stepdefs;
 
+import java.util.List;
+import java.util.Map;
+
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.openqa.selenium.By;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 
 import com.qa.automation.PageObjectFile.HeaderSecPageObjectFile;
 import com.qa.automation.PageObjectFile.LandingPageObjFile;
 import com.qa.automation.PageObjectFile.SignupLoginPOMFile;
 import com.qa.automation.core.WebDriverFacotry;
 
+import io.cucumber.datatable.DataTable;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;
@@ -66,10 +72,44 @@ private static final Logger logger = LogManager.getLogger(StepDef.class);
 	    
 		WebDriverFacotry.setURL(url);
 	}
+	
+	
+	//////////////////////////////
+	
+	@Given("user able to see application logo is displayed")
+	public void user_able_to_see_application_logo_is_displayed() {
+	   
+		landingPageObjFile.verifyApplicationLogo();
+		logger.info("Application logo is displayed");
+	}
+
+
+	@Then("user see the following option are available on header section")
+	public void user_see_the_following_option_are_available_on_header_section(DataTable dataTable) {
+	    // Write code here that turns the phrase above into concrete actions
+	    // For automatic transformation, change DataTable to one of
+	    // E, List<E>, List<List<E>>, List<Map<K,V>>, Map<K,V> or
+	    // Map<K, List<V>>. E,K,V must be a String, Integer, Float,
+	    // Double, Byte, Short, Long, BigInteger or BigDecimal.
+	    //io.cucumber.datatable.DataTable dataTable
+	    // For other transformations you can register a DataTableType.
+		
+//		List<Map<String,String>> headerSectionList = dataTable.asMaps(String.class, String.class);
+//		for(int i = 0; i < headerSectionList.size(); i++)
+//		{
+//			System.out.println(headerSectionList.get(i).get("HeaderListName"));
+//			System.out.println(headerSectionList.get(i).get("HeaderBtnPageTitle"));
+//		}
+		
+		landingPageObjFile.verifyHeaderSecBtnList(dataTable);
+		
+	}
+	
+	/////////////////////////////////////
 
 
 	@Given("user verify the home page is visible successfully")
-	public void user_verify_the_home_page_is_visible_successfully() {
+	public void user_verify_the_home_page_is_visible_successfully() {              //ul[@class='nav navbar-nav']
 	   
 		landingPageObjFile.homePageTitle();
 		logger.info("user verify the home page title");
