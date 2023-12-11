@@ -85,7 +85,7 @@ private static final Logger logger = LogManager.getLogger(StepDef.class);
 
 
 	@Then("user see the following option are available on header section")
-	public void user_see_the_following_option_are_available_on_header_section(DataTable dataTable) {
+	public void user_see_the_following_option_are_available_on_header_section(List<String> HeaderNameList) {
 	    // Write code here that turns the phrase above into concrete actions
 	    // For automatic transformation, change DataTable to one of
 	    // E, List<E>, List<List<E>>, List<Map<K,V>>, Map<K,V> or
@@ -101,7 +101,7 @@ private static final Logger logger = LogManager.getLogger(StepDef.class);
 //			System.out.println(headerSectionList.get(i).get("HeaderBtnPageTitle"));
 //		}
 		
-		landingPageObjFile.verifyHeaderSecBtnList(dataTable);
+		landingPageObjFile.verifyHeaderSecBtnList(HeaderNameList);
 		
 	}
 	

@@ -1,8 +1,6 @@
 package com.qa.automation.PageObjectFile;
 
 import java.util.List;
-import java.util.Map;
-
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -12,7 +10,6 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.qa.automation.core.JavaScriptExecutor;
 
-import io.cucumber.datatable.DataTable;
 import io.cucumber.java.Scenario;
 
 public class LandingPageObjFile {
@@ -56,7 +53,7 @@ public class LandingPageObjFile {
 	 
 	 private By pageLogo =  By.xpath("//img[@alt='Website for automation practice']");
 	 
-	 private By headerSecNameList = By.xpath("//ul[@class='nav navbar-nav']/li/a");
+	 private By actHederBtnNameList = By.xpath("//ul[@class='nav navbar-nav']/li/a");
 	
 	
 	//Public Methods
@@ -76,13 +73,14 @@ public class LandingPageObjFile {
 	 
 	 
 	 
-	 public void verifyHeaderSecBtnList(DataTable dataTable)
+	 public void verifyHeaderSecBtnList(List<String> HeaderNameList)
 	 {
-		 List<Map<String,String>> headerSectionList = dataTable.asMaps(String.class, String.class);
-			for(int i = 0; i < headerSectionList.size(); i++)
+		 List<String> headerSectionList = HeaderNameList;
+		 List<WebElement> actHederBtnNameListEle = driver.findElements(actHederBtnNameList);
+				 for(int i = 0; i < headerSectionList.size(); i++)
 			{
-				System.out.println(headerSectionList.get(i).get("HeaderListName"));
-				System.out.println(headerSectionList.get(i).get("HeaderBtnPageTitle"));
+				Assert.assertEquals(true, actHederBtnNameListEle.get(i).getText().contains(headerSectionList.get(i)));
+				
 			}
 	 }
 	 

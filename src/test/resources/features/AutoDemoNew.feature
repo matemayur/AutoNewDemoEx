@@ -10,14 +10,14 @@ And user verify the home page is visible successfully
 Scenario: User is able to open browser,Navigate to URL and validate different header option on home page of application
 Given user able to see application logo is displayed
 When user see the following option are available on header section   
-|HeaderListName       | HeaderBtnPageTitle                                         |
-| Home                | Automation Exercise                                        |
-| Products            | Automation Exercise - All Products                         |
-| Cart                | Automation Exercise - Checkout                             |
-| Signup / Login      | Automation Exercise - Signup / Login                       |
-| Test Cases          | Automation Practice Website for UI Testing - Test Cases    |
-| API Testing         | Automation Practice for API Testing                        | 
-| Contact us          | Automation Exercise - Contact Us                           |
+| Home                | 
+| Products            | 
+| Cart                | 
+| Signup / Login      | 
+| Test Cases          | 
+| API Testing         | 
+| Video Tutorials     |
+| Contact us          |             
 
 
 
