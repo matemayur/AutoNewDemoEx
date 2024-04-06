@@ -17,7 +17,7 @@ When user see the following option are available on header section
 | Test Cases          | 
 | API Testing         | 
 | Video Tutorials     |
-| Contact us          |             
+| Contact uss          |             
 
 
 
@@ -50,7 +50,7 @@ Then user Verify success message "You have been successfully subscribed!" is vis
 
 
 @ValidateSigupLoginerrorMesg
-Scenario: User open home page url and verify emailId and password is incorrect credential and able to get error message
+Scenario Outline: User open home page url and verify emailId and password is incorrect credential and able to get error message
 Given user click on signup/Login button
 When user redirected to signup/login page title as "Automation Exercise - Signup / Login"
 Then user able to visible text as "Login to your account"
@@ -66,7 +66,7 @@ Examples:
 
 
 @ValidateEmailIDPass
-Scenario: User open the home page url and verify emailId and password is valid 
+Scenario Outline: User open the home page url and verify emailId and password is valid 
 Given user click to signup/login button
 When user redirected to login page with title as "Automation Exercise - Signup / Login"
 Then user able to see the text "Login to your account"
@@ -77,7 +77,7 @@ Then user verify with "<Logged_In_As>" just after Logged in as button
 And user click on logout button
 Examples:
 | Email_Id                | Password      | Logged_In_As  |
-| ciwika1748@frandin.comm  | 123456.Abc    | Ryan Wick     |
+| ciwika1748@frandin.com  | 123456.Abc    | Ryan Wick     |
 | ciwika1744@frandin.com  | 123456.Abc    | James Richard |
 
 

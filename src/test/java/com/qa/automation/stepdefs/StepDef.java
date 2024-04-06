@@ -1,13 +1,12 @@
 package com.qa.automation.stepdefs;
 
 import java.util.List;
-import java.util.Map;
+
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.junit.Assert;
 import org.openqa.selenium.By;
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
@@ -16,7 +15,7 @@ import com.qa.automation.PageObjectFile.LandingPageObjFile;
 import com.qa.automation.PageObjectFile.SignupLoginPOMFile;
 import com.qa.automation.core.WebDriverFacotry;
 
-import io.cucumber.datatable.DataTable;
+
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;
@@ -45,6 +44,7 @@ private static final Logger logger = LogManager.getLogger(StepDef.class);
 		String browserName = WebDriverFacotry.getBrowserName();
 		driver = WebDriverFacotry.setUpBrowser(browserName);
 		scn.log("browser get invoked");
+		
 		landingPageObjFile = new LandingPageObjFile(driver);
 		headerSecPageObjectFile = new HeaderSecPageObjectFile(driver);
 		signupLoginPOMFile = new SignupLoginPOMFile(driver);
@@ -94,15 +94,14 @@ private static final Logger logger = LogManager.getLogger(StepDef.class);
 	    //io.cucumber.datatable.DataTable dataTable
 	    // For other transformations you can register a DataTableType.
 		
-//		List<Map<String,String>> headerSectionList = dataTable.asMaps(String.class, String.class);
-//		for(int i = 0; i < headerSectionList.size(); i++)
-//		{
-//			System.out.println(headerSectionList.get(i).get("HeaderListName"));
-//			System.out.println(headerSectionList.get(i).get("HeaderBtnPageTitle"));
-//		}
-		
-		landingPageObjFile.verifyHeaderSecBtnList(HeaderNameList);
-		
+		List<String> expectedHeaderSectionListEle = HeaderNameList;
+		List<WebElement> actualHeaderSectionListEle = driver.findElements(By.xpath("//ul[@class='nav navbar-nav']//a"));
+		for(int i = 0; i < expectedHeaderSectionListEle.size(); i++)
+		{
+		//	System.out.println(actualHeaderSectionListEle.get(i).getText());
+			Assert.assertEquals(true, actualHeaderSectionListEle.get(i).getText().contains(expectedHeaderSectionListEle.get(i)));
+		}
+
 	}
 	
 	/////////////////////////////////////
